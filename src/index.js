@@ -2,22 +2,22 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { HashRouter, Route } from "react-router-dom";
 
-import { Header, Footer } from "./components";
+import { Footer } from "./components";
 import App from "./App";
 import Contact from "./Contact";
-// import Project from "./Project";
+import Frames from "./Frames";
 
 import "./index.css";
 
 const Index = () => (
   <div className="main">
     <HashRouter>
-      <Header />
+      {/* <Header /> */}
       <div>
         <Route exact path="/" component={App} />
         <Route exact path="/contact" component={Contact} />
-        {/* <Project /> */}
       </div>
+      <Frames />
       <Footer />
     </HashRouter>
   </div>

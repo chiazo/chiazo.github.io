@@ -1,48 +1,4 @@
-/* feel free to go on google fonts and change this to another font! */
-@import url('https://fonts.googleapis.com/css2?family=Agu+Display&display=swap');
-/* == UI COMPONENTS == */
-/* buttons */
-[type="button"],
-[type="submit"],
-button,
-.a-button,
-.yellow-button,
-.transp-button,
-.green-button {
-  display: inline-block;
-  text-decoration: none;
-  font-size: 1rem;
-  font-family: "Agu Display", serif;
-  padding: 0.6rem 1.2rem;
-  vertical-align: middle;
-  text-align: center;
-  font-weight: 500;
-  cursor: pointer;
-  white-space: nowrap;
-  line-height: 1;
-  border-radius: 10px;
-  margin-bottom: 3%;
-  margin-top: 10px;
-}
-
-[type="button"]:hover,
-[type="submit"]:hover,
-button:hover {
-  background-color: white;
-}
-
-.buttons {
-  text-align: justify;
-}
-
-/* == HTML == */
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-  box-sizing: border-box;
-}
-
+/* Background and global styles */
 html {
   box-sizing: border-box;
   font-family: "Space Mono", monospace;
@@ -51,288 +7,120 @@ html {
   line-height: 1.4;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  color: #eee;
+  color: #000000;
   scroll-behavior: smooth;
   font-size: 18px;
-  background-image: url("../public/images/background_four.png");
-  background-color: #dda7ff;
-  background-size: 150%;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-image: url("../public/images/background_five.png");
+    background-color: #dda7ff;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    min-height: 100vh;
+    margin: 0;
 }
 
-div {
-  margin-bottom: 1rem;
-}
-
-body {
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
   box-sizing: border-box;
-  min-height: 100%;
 }
 
-a {
-  font-weight: 400;
-  font-size: 1rem;
-  text-decoration: none;
-}
-
-a:hover {
-  padding: .4rem;
-}
-
-h1,
-h2,
-h3,
-h4 {
-  color: #fa0c0c;
-  text-shadow: 4px 4px 16px #B2C4FF;
-  font-family: "Agu Display", serif;
-  letter-spacing: .3rem;
-  text-align: center;
-  margin-top: 2rem;
-  line-height: 1.2;
-}
-
-h1 {
-  font-size: 4rem;
-  color: #d7d7d7;
-  text-shadow: 2px 2px 2px #456ffc;
-  margin: 1rem 1rem 1rem 0;
-}
-
-h4 {
-  padding: 20px;
-}
-
-.content {
+/*=== FRAME CSS ===*/
+.frame {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
 }
 
-.wrapper,
-.container {
-  max-width: 1200px;
-  width: 100%;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin: 0 0;
-  transition: all 0.3s ease;
-}
-
-.container::before,
-.container::after,
-.wrapper::before,
-.wrapper::after {
-  display: table;
-  content: "";
-  clear: both;
-  width: 100%;
-}
-
-.main {
-  margin: 2rem;
-}
-
-.masthead {
-  margin: 3rem 0rem 1rem 0rem;
-  padding: 1rem;
-  min-width: 100%;
-}
-
-.content {
-  padding-bottom: 1rem;
+.frame-content {
+  position: relative;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
-.music {
-  margin-left: 3rem;
+.frame-string {
+  position: relative;
+  height: 480px;
+  margin-bottom: -5px;
+  z-index: 2;
+  user-select: none;
 }
 
+.frame-string.central {
+  height: 600px;
+}
+
+.frame-image {
+  height: 200px;
+  box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.48);
+  z-index: 1;
+  user-select: none;
+}
+
+.frame-image.central {
+  height: 400px;
+}
+
+.frame-link {
+  position: relative;
+  /* So that absolutely positioned children are relative to this container */
+  display: inline-block;
+  /* Shrink-wrap to image size */
+}
+
+.frame-text-overlay {
+  position: absolute;
+  left: 50%;
+  border: 2px solid white;
+  background-color: rgb(232, 225, 255);
+  transform: translateX(-60%);
+  padding: 6px 12px;
+  border-radius: 6px;
+  box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  z-index: 10;
+  user-select: none;
+  pointer-events: none;
+  /* prevents overlay from blocking clicks */
+}
+
+/* Position the first text block higher */
+.frame-text-overlay:first-of-type {
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -35%);
+  /* adjust vertical position */
+}
+
+.frame-text-overlay.main-text {
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -35%);
+  /* adjust vertical position */
+}
+
+/* Position the second text block lower */
+.frame-text-overlay.subtitle {
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  /* adjust vertical position */
+}
+
+/* Footer styles */
 .footer {
   clear: both;
   position: fixed;
   bottom: 0;
   font-family: "Agu Display", serif;
-  height: 200px;
+  height: 2.5rem;
   color: #eee;
-  /* border-bottom: 3px solid #6688fabb; */
   text-shadow: 1px 3px 4px #44410d;
   box-shadow: 15px 5px -5px #fffbb2;
-  height: 2.5rem;
   margin-top: 1rem;
-  padding: .3rem;
+  padding: 0.3rem;
   text-align: center;
-}
-
-.nav-item {
-  list-style: none;
-}
-
-.nav-links {
-  display: flex;
-  justify-content: center;
-  /* background-color: #6688fabb; */
-  /* border-bottom: 3px solid #6688fabb; */
-  /* box-shadow: 5px 5px 10px #456ffc; */
-  text-shadow: 1px 3px 4px #456ffc;
-  align-items: center;
-  gap: 1rem;
-}
-
-.nav-links a {
-  margin: 0 1rem;
-  color: #eee;
-}
-
-.hof {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-iframe {
-  border: 3px solid #6688fabb;
-  box-shadow: 5px 5px 10px #456ffc;
-}
-
-.socials {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 2.5rem;
-}
-
-.social-icon {
-  border-radius: 50%;
-  border: 2px solid #0840f686;
-  box-shadow: 2px 2px 5px #456ffc;
-}
-
-.social-svg-icon {
-  fill: #eee !important;
-}
-.social-svg-mask {
-  fill: #87a2fa !important;
-}
-
-.me {
-  width: 18rem;
-  height: 24rem;
-  /* border-left: 3px solid #6688fabb; */
-  border: 3px solid #6688fabb;
-  box-shadow: 5px 5px 10px #456ffc;
-}
-
-.hof>div {
-  margin: 3rem;
-  padding: 2rem;
-  border: 1px solid #285aff;
-}
-
-.hof img {
-  border: 6px double #6689fa;
-}
-
-.hof h4 {
-  margin-bottom: 0;
-}
-
-blockquote {
-  color: #eee;
-  padding: 1rem;
-}
-
-/* == MOBILE SPECIFIC ADJUSTMENTS == */
-@media (max-width: 700px) {
-  html {
-    font-size: 16px;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  h1 {
-    font-size: 3rem;
-    margin: 0.5rem 0;
-  }
-
-  h2, h3, h4 {
-    font-size: 1.5rem;
-  }
-
-  .buttons {
-    text-align: center;
-  }
-
-  .content {
-    flex-direction: column;
-    padding: 1rem 0;
-  }
-
-  .wrapper,
-  .container {
-    padding-left: 5px;
-    padding-right: 5px;
-  }
-
-  .main {
-    margin: 1rem;
-  }
-
-  .masthead {
-    margin: 1rem 0;
-  }
-
-  .hof {
-    display: block;
-  }
-
-      /* Center the content of the .music div */
-  .music {
-    display: flex;
-    justify-content: center; /* Horizontally center the iframe */
-    align-items: center;     /* Vertically center the iframe */
-    flex-direction: column;  /* Ensure the iframe is stacked properly if there's more content */
-    margin: 0 auto;
-  }
-
-  /* Ensure iframe takes up full width */
-  iframe {
-    margin-top: 1rem;
-    width: 100%;
-  }
-    /* Social icons in a 2-column grid */
-    .socials {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr); /* 3 per row */
-      justify-content: center;
-      align-items: center;
-    }
-  
-    .social-icon {
-      width: 50px;
-      height: 50px;
-      margin: auto;
-    }
-
-  .me {
-    /* width: 50%;
-    height: 200px;              /* Set a fixed height */
-    /* object-fit: cover;          Ensure the image covers the area without distortion */
-    /* object-position: bottom;   */ 
-    display: none;
-  
-  }
-
-  @media (max-width: 600px) { 
-
-  .me {
-    /* width: 70%;
-    height: 200px;              /* Set a fixed height */
-    /* object-fit: cover;          Ensure the image covers the area without distortion */
-    /* object-position: bottom;   */
-    display: none;
-  }
-  }
 }
