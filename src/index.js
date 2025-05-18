@@ -1,24 +1,26 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import { HashRouter, Route } from "react-router-dom";
+import { createRoot } from "react-dom/client";
 
 import { Footer } from "./components";
-import App from "./App";
 import Frames from "./Frames";
 
 import "./index.css";
 
 const Index = () => (
   <div className="main">
-    <HashRouter>
-      {/* <Header /> */}
-      <div>
-        <Route exact path="/" component={App} />
-      </div>
-      <Frames />
-      <Footer />
-    </HashRouter>
+    <Frames />
+    <Footer />
   </div>
 );
 
-ReactDOM.render(<Index />, document.getElementById("root"));
+const rootElement = document.getElementById("root");
+if (rootElement) {
+  const root = createRoot(rootElement); // This is the correct usage in React 18
+  root.render(
+    <React.StrictMode>
+      <Index />
+    </React.StrictMode>
+  );
+} else {
+  console.error("No root element found!");
+}
