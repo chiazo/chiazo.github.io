@@ -4,7 +4,6 @@ import { HashRouter, Route } from "react-router-dom";
 
 import { Footer } from "./components";
 import App from "./App";
-import Contact from "./Contact";
 import Frames from "./Frames";
 
 import "./index.css";
@@ -15,7 +14,6 @@ const Index = () => (
       {/* <Header /> */}
       <div>
         <Route exact path="/" component={App} />
-        <Route exact path="/contact" component={Contact} />
       </div>
       <Frames />
       <Footer />

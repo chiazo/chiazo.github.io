@@ -1,5 +1,6 @@
 import { Frame } from "./components";
-import React, { useState } from "react";
+import { useState } from "react";
+import { about_me, code, photography } from "./markdown";
 
 const Frames = () => {
   const [selectedFrame, setSelectedFrame] = useState(null);
@@ -28,6 +29,18 @@ const Frames = () => {
     }
   };
 
+  const frameData = [
+    { id: "two", headline: "art", textBody: photography },
+    { id: "three", headline: "code", textBody: code },
+    { id: "one", headline: "about me", textBody: about_me },
+  ];
+
+  // Find selected frame's markdown
+  const selectedMarkdown =
+    selectedFrame && selectedFrame !== centralImg
+      ? frameData.find((f) => f.id === selectedFrame)?.textBody
+      : null;
+
   return (
     <div className="frames">
       {/* Central frame */}
@@ -42,21 +55,18 @@ const Frames = () => {
         setSelectedFrame={setSelectedFrame}
         moved={movedFrame === centralImg}
         onClick={handleFrameClick}
+        textBody={selectedMarkdown}
       />
       <div className="grouped-frames">
         {/* Grouped frames */}
-        {[
-          { id: "two", headline: "art", bodyText: "wowza 1" },
-          { id: "three", headline: "code", bodyText: "wowza 2" },
-          { id: "one", headline: "about me", bodyText: "wowza 3" },
-        ].map(({ id, headline, bodyText }, idx) => (
+        {frameData.map(({ id, headline, textBody }, idx) => (
           <Frame
             key={id}
             id={id}
             centralframe={false}
             index={idx}
             headline={headline}
-            bodyText={bodyText}
+            textBody={textBody}
             selectedFrame={selectedFrame}
             setSelectedFrame={setSelectedFrame}
             moved={movedFrame === id}

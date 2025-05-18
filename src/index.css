@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
 
-/* Background and global styles */
 html {
   box-sizing: border-box;
   font-family: "Lexend Deca", sans-serif;
@@ -26,6 +25,76 @@ html {
 *:after {
   box-sizing: inherit;
   box-sizing: border-box;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  text-decoration: none;
+  color: #A44CBB;
+}
+
+
+
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover,
+h5 a:hover,
+h6 a:hover {
+  text-underline-offset: 8px;
+}
+
+body a:not(h1 a):not(h2 a):not(h3 a):not(h4 a):not(h5 a):not(h6 a) {
+  color: #0673AB;
+  /* example color for normal links */
+}
+
+/* Add hover effect to underline links on hover for usability */
+a:hover {
+  text-decoration: underline;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: #ccc;
+  margin: 2rem 0;
+}
+
+img {
+  padding: 2px;
+  border-radius: 4px;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #A44CBB;
+}
+
+/* Scrollbar track */
+::-webkit-scrollbar {
+  width: 10px;
+  /* Adjust for thickness */
+}
+
+/* Scrollbar background */
+::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 10px;
+}
+
+/* Scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background: #A44CBB;
+  border-radius: 10px;
+  border: 2px solid #f0f0f0;
 }
 
 /*=== FRAME CSS ===*/
@@ -81,6 +150,19 @@ html {
   /* So that absolutely positioned children are relative to this container */
   display: inline-block;
   /* Shrink-wrap to image size */
+}
+
+.frame-text-body h1 {
+  margin-bottom: 0.5rem;
+}
+
+.frame-text-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px auto; /* top-bottom 10px, auto left-right for centering */
+  border-radius: 6px;
+    border: 1px solid #ccc; 
 }
 
 .frame-text-body {
