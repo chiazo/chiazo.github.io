@@ -1,8 +1,7 @@
-/* Background and global styles */
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');/* Background and global styles */
 html {
   box-sizing: border-box;
-  font-family: "Space Mono", monospace;
-  -webkit-font-smoothing: antialiased;
+  font-family: "Lexend Deca", sans-serif;  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.4;
   padding-left: 1.5rem;
@@ -54,6 +53,7 @@ html {
 }
 
 .frame-image {
+  border: 2px solid rgb(0, 0, 0);
   height: 200px;
   box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.48);
   z-index: 1;
@@ -62,6 +62,7 @@ html {
 
 .frame-image.central {
   height: 400px;
+
 }
 
 .frame-link {
@@ -71,42 +72,66 @@ html {
   /* Shrink-wrap to image size */
 }
 
+.frame-text-body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  /* semi-transparent white background */
+  color: #000;
+  padding: 20px;
+  overflow-y: auto;
+  box-sizing: border-box;
+  /* Optional: add border radius or shadow to match style */
+  border-radius: 10px;
+}
+
 .frame-text-overlay {
   position: absolute;
   left: 50%;
-  border: 2px solid white;
-  background-color: rgb(232, 225, 255);
   transform: translateX(-60%);
-  padding: 6px 12px;
+  box-shadow: 0 4px 2px -2px black;
+    background-color: #ffffffa2;
+    border: 2px solid white;
+    color: black;
   border-radius: 6px;
   box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.2);
-  font-weight: bold;
   z-index: 10;
   user-select: none;
   pointer-events: none;
   /* prevents overlay from blocking clicks */
 }
 
-/* Position the first text block higher */
-.frame-text-overlay:first-of-type {
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -35%);
-  /* adjust vertical position */
-}
-
-.frame-text-overlay.main-text {
-  top: 30%;
+.frame-text-overlay.main-headline {
+  font-size: 22px;
+  top: 39%;
+  font-weight: 700;
+  background-color: #4300519e;
+  color: #fff;
+  padding: 5px;
   left: 50%;
   transform: translate(-50%, -35%);
   /* adjust vertical position */
 }
 
+
 /* Position the second text block lower */
 .frame-text-overlay.subtitle {
+  padding: 6px 12px;
+  width: 400px;
     top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
+  /* adjust vertical position */
+}
+.frame-text-overlay.headline {
+  padding: 6px 12px;
+  top: 40%;
+    left: 50%;
+    box-shadow: 0 4px 2px -2px black;
+    transform: translate(-50%, -35%);
   /* adjust vertical position */
 }
 
@@ -114,8 +139,10 @@ html {
 .footer {
   clear: both;
   position: fixed;
-  bottom: 0;
-  font-family: "Agu Display", serif;
+  bottom: 2%;
+  right: 5%;
+  font-size: 15px;
+  font-family: "Lilita One", sans-serif;
   height: 2.5rem;
   color: #eee;
   text-shadow: 1px 3px 4px #44410d;

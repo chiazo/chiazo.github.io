@@ -1,25 +1,65 @@
 import { Frame } from "./components";
+import React, { useState } from "react";
 
 const Frames = () => {
+  const [selectedFrame, setSelectedFrame] = useState(null);
+  const [movedFrame, setMovedFrame] = useState(null);
+  const centralImg = "four";
+
+  const handleFrameClick = (id, isCentral) => {
+    if (isCentral) {
+      if (selectedFrame && selectedFrame !== centralImg) {
+        setSelectedFrame(null);
+        setMovedFrame(null);
+      } else if (selectedFrame === null) {
+        setMovedFrame(movedFrame === centralImg ? null : centralImg);
+      } else {
+        setSelectedFrame(null);
+        setMovedFrame(null);
+      }
+    } else {
+      if (selectedFrame === id) {
+        setSelectedFrame(null);
+        setMovedFrame(null);
+      } else {
+        setSelectedFrame(id);
+        setMovedFrame(id);
+      }
+    }
+  };
+
   return (
-    <div className="frames">
+    <div classId="frames">
       {/* Central frame */}
       <Frame
-        img="one"
+        id={centralImg}
         centralframe={true}
-        headline={"hi, my name is chiazo!"}
+        headline={"✨ hi, i'm chiazo! ✨"}
         subtitle={
-          "i'm brooklyn based engineer & i currently write code and queries full-time at Stripe. welcome!"
+          "i'm a brooklyn-based engineer, currently writing code and queries at Stripe."
         }
+        selectedFrame={selectedFrame}
+        setSelectedFrame={setSelectedFrame}
+        moved={movedFrame === centralImg}
+        onClick={handleFrameClick}
       />
 
       {/* Grouped frames */}
       {[
-        { name: "two", headline: "art" },
-        { name: "three", headline: "code" },
-        { name: "four", headline: "about me" },
-      ].map(({ name, headline }, idx) => (
-        <Frame key={name} img={name} index={idx} headline={headline} />
+        { id: "two", headline: "art" },
+        { id: "three", headline: "code" },
+        { id: "one", headline: "about me" },
+      ].map(({ id, headline }, idx) => (
+        <Frame
+          key={id}
+          id={id}
+          index={idx}
+          headline={headline}
+          selectedFrame={selectedFrame}
+          moved={movedFrame === id}
+          onClick={handleFrameClick}
+          isFirst={idx === 0}
+        />
       ))}
     </div>
   );
