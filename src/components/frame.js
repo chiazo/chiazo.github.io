@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import Markdown from "react-markdown";
 
 const Frame = ({
   id,
@@ -10,7 +11,7 @@ const Frame = ({
   moved,
   onClick,
   isFirst,
-  bodyText,
+  textBody,
 }) => {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -77,12 +78,8 @@ const Frame = ({
         />
 
         {isCentral && shouldShowTextBody ? (
-          // Show text body instead of headline/subtitle
           <div className="frame-text-body">
-            <p>
-              This is body text responding to frame {bodyText}
-              <strong>{selectedFrame}</strong>.
-            </p>
+            <Markdown className="image-grid">{textBody}</Markdown>
           </div>
         ) : isCentral ? (
           <>
