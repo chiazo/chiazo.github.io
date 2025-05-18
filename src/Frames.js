@@ -29,7 +29,7 @@ const Frames = () => {
   };
 
   return (
-    <div classId="frames">
+    <div className="frames">
       {/* Central frame */}
       <Frame
         id={centralImg}
@@ -43,24 +43,28 @@ const Frames = () => {
         moved={movedFrame === centralImg}
         onClick={handleFrameClick}
       />
-
-      {/* Grouped frames */}
-      {[
-        { id: "two", headline: "art" },
-        { id: "three", headline: "code" },
-        { id: "one", headline: "about me" },
-      ].map(({ id, headline }, idx) => (
-        <Frame
-          key={id}
-          id={id}
-          index={idx}
-          headline={headline}
-          selectedFrame={selectedFrame}
-          moved={movedFrame === id}
-          onClick={handleFrameClick}
-          isFirst={idx === 0}
-        />
-      ))}
+      <div className="grouped-frames">
+        {/* Grouped frames */}
+        {[
+          { id: "two", headline: "art", bodyText: "wowza 1" },
+          { id: "three", headline: "code", bodyText: "wowza 2" },
+          { id: "one", headline: "about me", bodyText: "wowza 3" },
+        ].map(({ id, headline, bodyText }, idx) => (
+          <Frame
+            key={id}
+            id={id}
+            centralframe={false}
+            index={idx}
+            headline={headline}
+            bodyText={bodyText}
+            selectedFrame={selectedFrame}
+            setSelectedFrame={setSelectedFrame}
+            moved={movedFrame === id}
+            onClick={handleFrameClick}
+            isFirst={idx === 0}
+          />
+        ))}
+      </div>
     </div>
   );
 };
