@@ -9,6 +9,11 @@ An algorithm that simulates clothing swaps among participants with different clo
 A manually run program designed to track and update COVID-19 trends in your city.
 
 ---
+# [xChange](https://chiazo.github.io/xchange/)
+
+A UX/UI group project (COMP 590-093) built during my senior year to help UNC Chapel Hill students connect, share, and exchange resources in a private, campus-focused space.
+
+---
 
 # [CSSG Education Team](https://cssg-edu-team.github.io/)
 

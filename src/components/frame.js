@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 import Markdown from "react-markdown";
+import { ReactComponent as LinkedInIcon } from "../assets/icons/linkedin.svg";
+import { ReactComponent as GitHubIcon } from "../assets/icons/github.svg";
+import { ReactComponent as EmailIcon } from "../assets/icons/email.svg";
 
 const Frame = ({
   id,
@@ -26,7 +29,23 @@ const Frame = ({
 
   const isCentral = centralframe === true;
   const shouldShowTextBody = isCentral && selectedFrame && selectedFrame !== id;
-
+  const socialLinks = [
+    {
+      name: "LinkedIn",
+      url: "https://www.linkedin.com/in/chiazo/",
+      Icon: LinkedInIcon,
+    },
+    {
+      name: "GitHub",
+      url: "https://www.github.com/chiazo",
+      Icon: GitHubIcon,
+    },
+    {
+      name: "Email",
+      url: "mailto:chiazo@alumni.unc.edu",
+      Icon: EmailIcon,
+    },
+  ];
   const style = isMobile
     ? {
         position: "relative", // no fixed position on mobile
@@ -70,7 +89,6 @@ const Frame = ({
         />
       )}
       <div className="frame-link">
-        {/* Always show the frame image */}
         <img
           className={`frame-image${isCentral ? " central" : ""}`}
           src={img_src}
@@ -87,6 +105,23 @@ const Frame = ({
               <span className="highlight">{headline}</span>
             </div>
             <div className="frame-text-overlay subtitle">{subtitle}</div>
+            <div className="social-container">
+              {" "}
+              Let's connect:
+              <div className="social-links">
+                {socialLinks.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <link.Icon className="social-icon" />
+                  </a>
+                ))}
+              </div>
+            </div>
           </>
         ) : (
           <div className="frame-text-overlay headline">{headline}</div>

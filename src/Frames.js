@@ -43,7 +43,6 @@ const Frames = () => {
 
   return (
     <div className="frames">
-      {/* Central frame */}
       <Frame
         id={centralImg}
         centralframe={true}
@@ -58,7 +57,6 @@ const Frames = () => {
         textBody={selectedMarkdown}
       />
       <div className="grouped-frames">
-        {/* Grouped frames */}
         {frameData.map(({ id, headline, textBody }, idx) => (
           <Frame
             key={id}

@@ -37,8 +37,6 @@ h6 a {
   color: #A44CBB;
 }
 
-
-
 h1 a:hover,
 h2 a:hover,
 h3 a:hover,
@@ -50,10 +48,8 @@ h6 a:hover {
 
 body a:not(h1 a):not(h2 a):not(h3 a):not(h4 a):not(h5 a):not(h6 a) {
   color: #0673AB;
-  /* example color for normal links */
 }
 
-/* Add hover effect to underline links on hover for usability */
 a:hover {
   text-decoration: underline;
 }
@@ -78,19 +74,15 @@ h6 {
   color: #A44CBB;
 }
 
-/* Scrollbar track */
 ::-webkit-scrollbar {
   width: 10px;
-  /* Adjust for thickness */
 }
 
-/* Scrollbar background */
 ::-webkit-scrollbar-track {
   background: #f0f0f0;
   border-radius: 10px;
 }
 
-/* Scrollbar thumb (the draggable part) */
 ::-webkit-scrollbar-thumb {
   background: #A44CBB;
   border-radius: 10px;
@@ -114,7 +106,6 @@ h6 {
 .frame-string {
   position: relative;
   height: 480px;
-  /* default desktop height */
   margin-bottom: -5px;
   z-index: 2;
   user-select: none;
@@ -122,34 +113,33 @@ h6 {
 
 .frame-string.central {
   height: 600px;
-  /* default desktop central height */
 }
 
 .frame-image {
   border: 2px solid rgb(0, 0, 0);
+  border-radius: 4px;
   height: 200px;
-  /* default desktop height */
-  box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.48);
+  box-shadow: 4px 3px rgba(0, 0, 0, 0.48);
   z-index: 1;
   user-select: none;
   max-width: 100%;
-  /* added to avoid overflow */
   box-sizing: border-box;
-  /* ensure sizing includes border */
 }
 
 .frame-image.central {
   height: 400px;
-  /* default desktop central height */
   max-width: 100%;
   box-sizing: border-box;
 }
 
 .frame-link {
   position: relative;
-  /* So that absolutely positioned children are relative to this container */
   display: inline-block;
-  /* Shrink-wrap to image size */
+}
+
+.frame-text-body {
+  border: 2px solid rgb(21, 21, 21);
+  border-radius: 4px;
 }
 
 .frame-text-body h1 {
@@ -160,9 +150,9 @@ h6 {
   max-width: 100%;
   height: auto;
   display: block;
-  margin: 10px auto; /* top-bottom 10px, auto left-right for centering */
+  margin: 10px auto;
   border-radius: 6px;
-    border: 1px solid #ccc; 
+  border: 1px solid #ccc;
 }
 
 .frame-text-body {
@@ -172,12 +162,10 @@ h6 {
   right: 0;
   bottom: 0;
   background: rgba(255, 255, 255, 0.9);
-  /* semi-transparent white background */
   color: #000;
   padding: 20px;
   overflow-y: auto;
   box-sizing: border-box;
-  /* Optional: add border radius or shadow to match style */
   border-radius: 10px;
 }
 
@@ -193,7 +181,6 @@ h6 {
   z-index: 10;
   user-select: none;
   pointer-events: none;
-  /* prevents overlay from blocking clicks */
 }
 
 .frame-text-overlay.main-headline {
@@ -205,17 +192,14 @@ h6 {
   padding: 5px;
   left: 50%;
   transform: translate(-50%, -35%);
-  /* adjust vertical position */
 }
 
-/* Position the second text block lower */
 .frame-text-overlay.subtitle {
   padding: 6px 12px;
   width: 400px;
   top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* adjust vertical position */
 }
 
 .frame-text-overlay.headline {
@@ -224,187 +208,146 @@ h6 {
   left: 50%;
   box-shadow: 0 4px 2px -2px black;
   transform: translate(-50%, -35%);
-  /* adjust vertical position */
 }
 
 /* Footer styles */
-.footer {
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.social-icon {
+  width: 25px;
+  height: 25px;
+  color: #e1e1e1;
+  transition: filter 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #A44CBB;
+}
+
+.social-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  color: #eee;
+  margin: 0.5rem auto 0 auto;
+  border: 2px solid rgb(0, 0, 0);
+  box-shadow: 4px 3px rgba(0, 0, 0, 0.48);
+  padding: 0.5rem;
+  border-radius: 4px;
+  background-color: rgba(71, 51, 202, 0.154);
+  width: fit-content;
+  max-width: 100%;
+}
+
+footer {
   clear: both;
   position: fixed;
   bottom: 2%;
   right: 5%;
-  font-size: 15px;
+  font-size: 16px;
   font-family: "Lilita One", sans-serif;
-  height: 2.5rem;
-  color: #eee;
-  text-shadow: 1px 3px 4px #44410d;
-  box-shadow: 15px 5px -5px #fffbb2;
+  color: #e1e1e1;
+  text-shadow: 1px 1px 4px #212121;
   margin-top: 1rem;
   padding: 0.3rem;
-  text-align: center;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: auto;
+}
+
+footer p {
+  margin: 0;
+  font-size: 16px;
+  text-align: left;
+}
+
+footer .social-container {
+  margin-left: 15px;
 }
 
 /* MOBILE STYLES */
-
-@media screen and (max-aspect-ratio: 3/4) {
-  .frame.central {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-
-  body,
-  .app-container {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-  }
-}
-
-@media screen and (max-width: 375px) {
-  .frame-text-overlay.main-headline {
-    font-size: 16px !important;
-    top: 30% !important;
-    transform: translate(-50%, -40%) !important;
-    padding: 6px 12px !important;
-    width: 90% !important;
-    /* Let it span most of the image */
-    text-align: center !important;
-    white-space: normal !important;
-    /* Allow wrapping */
-  }
-
-  .frame-text-overlay.subtitle {
-    font-size: 12px !important;
-    top: 50% !important;
-    transform: translate(-50%, -40%) !important;
-    width: 90% !important;
-    padding: 4px 8px !important;
-    text-align: center !important;
-  }
-
-  .frame-image.central {
-    height: 28vh !important;
-    max-height: 300px !important;
-  }
-
-  .frame-string.central {
-    height: 120px !important;
-    max-height: 150px !important;
-  }
-}
-
-
 @media (max-width: 1025px) {
-  html,
-    body,
-    #root {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-  
-    .app-container {
-      flex: 1 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      width: 100%;
-    }
-  
-    .footer {
-      flex-shrink: 0;
-      position: relative !important;
-      /* allow footer to be in normal flow */
-      margin-top: auto;
-      /* push footer down */
-      bottom: 1%;
-      text-align: center;
-      box-shadow: none;
-      text-shadow: none;
-      padding: 0.5rem 0;
-      width: 110%;
-    }
-
-  /* Group non-central frames side-by-side, no overflow */
-  .grouped-frames {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    gap: 0.5rem !important;
-    width: 100% !important;
-    max-width: 100vw !important;
-    overflow-x: hidden !important;
-    box-sizing: border-box !important;
-    padding-bottom: 1rem !important;
-    align-items: flex-start !important;
-    position: relative !important;
-  }
-
-  /* Hide all non-central frame-string */
+  .social-container,
   .frame-string:not(.central) {
-    display: none !important;
+    display: none;
   }
 
-  /* Reduce height of central frame-string on mobile */
   .frame-string.central {
-    height: 200px !important;
-    max-height: 200px !important;
-    width: auto;
+    margin-top: -25rem;
   }
 
-  /* Adjust central frame container */
-  .frame.central {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-    margin-bottom: 1rem !important;
+  .grouped-frames {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    gap: 1rem;
+    width: 100%;
+    height: 100%;
   }
 
-  /* Central frame image */
-  .frame-image.central {
-    height: 30vh !important;
-    max-height: 400px !important;
-    width: auto !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-    margin-bottom: 1rem !important;
+  .frame-image {
+    height: 100px;
   }
 
-  /* Text body overlay */
-  .frame-text-body {
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    background: rgba(255, 255, 255, 0.9) !important;
-    overflow-y: auto !important;
-    padding: 20px !important;
-    border-radius: 10px !important;
-    box-sizing: border-box !important;
-    max-height: 400px !important;
-    height: 90% !important;
+  .frame-text-overlay.headline {
+    font-size: 15px;
+    text-align: center;
+    padding: 0.5rem;
   }
 
-  /* Non-central frame images smaller */
-  .frame-image:not(.central) {
-    height: 100px !important;
-    width: auto !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
-  .frame-text-overlay {
-    max-width: 90% !important;
-    font-size: 14px !important;
+  .frame-text-overlay.main-headline {
+    padding: 6px 12px;
+    width: 90%;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
   }
 
   .frame-text-overlay.subtitle {
-    width: 100% !important;
-    font-size: 12px !important;
+    padding: 6px 12px;
+    width: 90%;
+    max-width: 400px;
+    top: 64%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+  }
+
+
+  .app-container {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    text-align: center;
+    z-index: 10;
+  }
+
+  footer p {
+    margin: 0;
+    font-size: 16px;
+    text-align: center;
   }
 }
