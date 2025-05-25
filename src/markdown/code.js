@@ -55,14 +55,6 @@ A program to update foreign vocab lists hosted on google sheets with definitions
 
 ---
 
-# [Syndrome](https://github.com/chiazo/syndrome)
-
-A CSS framework built using Sass. Syndrome is a toolkit featuring all of my favorite CSS styles in one place.
-
-[Click to check out the toolkit.](https://chiazo.github.io/syndrome)
-
----
-
 # [FlexDJ](https://github.com/chiazo/FlexDJ-1)
 
 A team project built for cross-platform playlist creation + more. FlexDJ merges Spotify, Youtube, and Deezer all in one place!
@@ -76,14 +68,6 @@ A team project built for cross-platform playlist creation + more. FlexDJ merges 
 A choose your own adventure web game for the Center for Court Innovation, a NYC-based non-profit, written in Twine. Built by hackNY fellows!
 
 [Click to start your adventure.](https://youth-justice-board.github.io/AllEyesOnUs/)
-
----
-
-# [Mark Katz](https://mkatzsite-dept-mkatzsite.cloudapps.unc.edu/)
-
-A professional website for UNC Music Professor Mark Katz built using Wordpress.
-
-[Click to see the database I helped fill.](https://mkatzsite-dept-mkatzsite.cloudapps.unc.edu/?page_id=380)
 
 ---
 
