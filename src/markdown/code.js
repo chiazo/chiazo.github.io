@@ -14,6 +14,7 @@ A manually run program designed to track and update COVID-19 trends in your city
 A UX/UI group project (COMP 590-093) built during my senior year to help UNC Chapel Hill students connect, share, and exchange resources in a private, campus-focused space.
 
 [Click to see our demo!](https://chiazo.github.io/xchange/)
+
 ---
 
 # [CSSG Education Team](https://cssg-edu-team.github.io/)
