@@ -1,11 +1,29 @@
 import { Frame } from "./components";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { about_me, code, photography } from "./markdown";
 
 const Frames = () => {
   const [selectedFrame, setSelectedFrame] = useState(null);
   const [movedFrame, setMovedFrame] = useState(null);
   const centralImg = "four";
+
+  useEffect(() => {
+    const preloadImage = (src) => {
+      const img = new Image();
+      img.src = src;
+    };
+
+    preloadImage("../public/images/my-photography/colombia/cali1.jpg");
+    preloadImage("../public/images/my-photography/colombia/cali2.jpg");
+    preloadImage("../public/images/my-photography/colombia/cali3.jpg");
+    preloadImage("../public/images/my-photography/colombia/cali4.jpg");
+    preloadImage("../public/images/my-photography/colombia/cali5.jpg");
+    preloadImage("../public/images/my-photography/colombia/cali6.jpg");
+    preloadImage("../public/images/my-photography/colombia/cali7.jpg");
+    preloadImage("../public/images/my-photography/colombia/cali8.jpg");
+    preloadImage("../public/images/my-photography/colombia/cali9.jpg");
+    preloadImage("../public/images/my-photography/colombia/cali10.jpg");
+  }, []);
 
   const handleFrameClick = (id, isCentral) => {
     if (isCentral) {
