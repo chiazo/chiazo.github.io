@@ -66,7 +66,7 @@ const Frames = () => {
         centralframe={true}
         headline={"✨ hi, i'm chiazo! ✨"}
         subtitle={
-          "i'm a brooklyn-based engineer, currently writing code and queries at Stripe."
+          "i'm a brooklyn-based engineer, currently writing code and queries full time."
         }
         selectedFrame={selectedFrame}
         setSelectedFrame={setSelectedFrame}
