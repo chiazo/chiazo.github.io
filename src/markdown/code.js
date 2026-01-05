@@ -1,4 +1,8 @@
-const code = `# [clothing-swap](https://chiazo.github.io/clothing-swap)
+const code = `# [big-two](https://github.com/chiazo/big-two)
+
+The typescript version of my all time favorite card game, [Big Two](https://www.pagat.com/climbing/bigtwo.html). I was introduced to the game by my SummerBridge HK students in 2019 and I've been playing it ever since!
+---
+# [clothing-swap](https://chiazo.github.io/clothing-swap)
 
 An algorithm that simulates clothing swaps among participants with different clothing sizes and item amounts indexing on fairness.
 
