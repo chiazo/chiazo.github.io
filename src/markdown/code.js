@@ -1,8 +1,8 @@
-const code = `
-# [netflix-email-forwarder](https://github.com/chiazo/netflix-email-forwarder)
+const code = `# [netflix-email-forwarder](https://github.com/chiazo/netflix-email-forwarder)
 
-A solution to me never being on my phone when my family on the west coast needs the netflix code!
----
+${"A solution to me never being on my phone when my family on the west coast needs the netflix code!"}
+
+----
 # [big-two](https://github.com/chiazo/big-two)
 
 The typescript version of my all time favorite card game, [Big Two](https://www.pagat.com/climbing/bigtwo.html). I was introduced to the game by my SummerBridge HK students in 2019 and I've been playing it ever since!
