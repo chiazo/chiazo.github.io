@@ -44,6 +44,24 @@ A Gatsby site built from scratch to establish a central documentation hub for TA
 
 ---
 
+
+# [All Eyes on Us](https://github.com/chiazo/alleyesonus-demo)
+
+A choose your own adventure web game for the Center for Court Innovation, a NYC-based non-profit, written in Twine. Built by hackNY fellows!
+
+[Click to start your adventure.](https://youth-justice-board.github.io/AllEyesOnUs/)
+
+---
+
+
+# [FlexDJ](https://github.com/chiazo/FlexDJ-1)
+
+A team project built for cross-platform playlist creation + more. FlexDJ merges Spotify, Youtube, and Deezer all in one place!
+
+[Click to start making playlists.](https://flexdj.vercel.app/)
+
+---
+
 # [my-planner](https://github.com/chiazo/my-planner)
 
 A web app that creates a daily schedule based on inputed tasks and their estimated time for completion + any blocks of free time I designate.
@@ -65,22 +83,6 @@ A web app that takes in a text in another language, allowing the user to click w
 A program to update foreign vocab lists hosted on google sheets with definitions & example sentences.
 
 [Click to see the repo](https://github.com/chiazo/word-adder).
-
----
-
-# [FlexDJ](https://github.com/chiazo/FlexDJ-1)
-
-A team project built for cross-platform playlist creation + more. FlexDJ merges Spotify, Youtube, and Deezer all in one place!
-
-[Click to start making playlists.](https://flexdj.vercel.app/)
-
----
-
-# [All Eyes on Us](https://github.com/chiazo/alleyesonus-demo)
-
-A choose your own adventure web game for the Center for Court Innovation, a NYC-based non-profit, written in Twine. Built by hackNY fellows!
-
-[Click to start your adventure.](https://youth-justice-board.github.io/AllEyesOnUs/)
 
 ---
 
